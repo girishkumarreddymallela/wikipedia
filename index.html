@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Encyclopedia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #searchInput {
+      padding: 5px;
+    }
+
+    #searchButton {
+      padding: 5px 10px;
+      background-color: #FFF;
+      color: #0074D9;
+      border: none;
+      cursor: pointer;
+    }
+
+    #content {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid hsl(0, 20%, 87%);
+    }
+
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Encyclopedia</h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="searchButton">Search</button>
+  </header>
+  <div id="content">
+    <h2>Title of the Article</h2>
+    <p>This is the content of the article...</p>
+  </div>
+  
+  
+  <script>
+    const searchButton = document.getElementById("searchButton");
+    const searchInput = document.getElementById("searchInput");
+    const contentDiv = document.getElementById("content");
+
+    searchButton.addEventListener("click", () => {
+      const searchTerm = searchInput.value;
+      // Simulate fetching content from a database or API
+      const fetchedContent = "This is the content of the article about " + searchTerm;
+      contentDiv.innerHTML = `<h2>${searchTerm}</h2><p>${fetchedContent}</p>`;
+    });
+  </script>
+</body>
+</html>
